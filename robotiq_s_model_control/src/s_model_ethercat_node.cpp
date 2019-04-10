@@ -158,6 +158,7 @@ int main(int argc, char** argv)
     // Create the hw api layer
     boost::shared_ptr<robotiq_s_model_control::SModelAPI> hw_api
             (new robotiq_s_model_control::SModelAPI(ethercat_client));
+    if (activate) hw_api->setInitialization(robotiq::INIT_ACTIVATION);
 
     // Create the hardware interface layer
     boost::shared_ptr<robotiq_s_model_control::SModelHWInterface> hw_interface

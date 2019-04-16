@@ -45,9 +45,9 @@ SModelROS::SModelROS(ros::NodeHandle &nh, boost::shared_ptr<SModelAPI> driver, s
     output_sub_ = nh.subscribe("output", 10, &SModelROS::handleRawCmd, this);
 
     //! setup dynamic reconfigure
-    reconfigure_.reset(new ReconfigureServer(reconfigure_mutex_, nh_));
-    ReconfigureServer::CallbackType f = boost::bind(&SModelROS::handleReconfigure, this, _1, _2);
-    reconfigure_->setCallback(f);
+    // reconfigure_.reset(new ReconfigureServer(reconfigure_mutex_, nh_));
+    // ReconfigureServer::CallbackType f = boost::bind(&SModelROS::handleReconfigure, this, _1, _2);
+    // reconfigure_->setCallback(f);
 
     if(joint_names.size() != 4)
     {
